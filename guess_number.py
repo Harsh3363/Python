@@ -3,8 +3,8 @@ import clear
 
 def play_again(run_again):
   if run_again=="y":
-              clear()
-              guess_game()
+      # clear()
+      guess_game()
 
 def guess_game():
   print("Welcome to the number guessing game! \nI'm       thinking of a number in between 1 to 100")
@@ -21,24 +21,26 @@ def guess_game():
   continue_game = True
   ans = guess()
   
-  while continue_game  : 
+  while continue_game and num_attempt>0 : 
     print(f"you have {num_attempt} number of attempts") 
     num = int(input("guess a number: "))
-    print(num_attempt)
     if num>ans: 
       print("guessed number is too high")
       num_attempt-=1
     elif num<ans:
       print("guessed number is too low")
       num_attempt-=1
-    elif num_attempt==0:
+    elif num==ans:
+        print("You guessed it correct\n Congrats won!!") 
+        continue_game = False
+  if num_attempt==0:
       print("you lost")
       run_again = input("wanna play again?\n y or n: ")
       play_again(run_again)
-    elif num==ans:
+  if num==ans:
       print("You guessed it correct\n Congrats won!!") 
       continue_game = False
-      run_again = input("wanna play again?\ny or n: ")
-      play_again(run_again)
+  run_again = input("wanna play again?\ny or n: ")
+  play_again(run_again)
     
 guess_game()
