@@ -3,12 +3,8 @@ import clear
 
 def play_again(run_again):
   if run_again=="y":
-    clear()
-    guess_game()
-
-run_again = input("do you want to play game y or n: ")
-play_again(run_again)
-
+              clear()
+              guess_game()
 
 def guess_game():
   print("Welcome to the number guessing game! \nI'm       thinking of a number in between 1 to 100")
@@ -45,4 +41,4 @@ def guess_game():
       run_again = input("wanna play again?\ny or n: ")
       play_again(run_again)
     
-# guess_game()
+guess_game()
