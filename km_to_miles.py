@@ -22,10 +22,9 @@ con.config(padx=10, pady=10)
 
 user_input = Entry(width=20)
 user_input.grid(column=3, row=1)
-user_input.focus()
 
 def miles_to_km():
-    con["text"] = round(int(user_input.get()) * 1.609)
+    con["text"] = int(user_input.get()) * 1.609
 
 
 but = Button(text="Convert",command=miles_to_km)
