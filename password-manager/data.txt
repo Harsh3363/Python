@@ -1,0 +1,3 @@
+website || email || password
+
+amazom || sample@gmail.com || amaozn
